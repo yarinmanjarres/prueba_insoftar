@@ -1,0 +1,53 @@
+
+
+<app-formulario *ngIf="component_agregar" (close)="cambiar_formulario()" [tipo]= tipo  [persona] = datapersona></app-formulario>
+<div class="container py-3">
+  <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+      <span class="fs-4">PERSONAS</span>
+    </a>
+
+    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      <a class="me-3 py-2 text-dark text-decoration-none" (click)="agregar()">agregar</a>
+      <!-- <a class="me-3 py-2 text-dark text-decoration-none" (click)="" >Actualizar</a> -->
+    </nav>
+  </header>
+
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+
+    <p class="fs-5 text-muted">listado persona</p>
+  </div>
+
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col"*ngFor="let persona of personas">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{persona.apellidos}}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{persona.nombres}}</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>{{persona.cedula}}</li>
+              <li>{{persona.correo}}</li>
+            </ul>
+            <button type="button" (click)="editar(persona)" class="w-100 btn btn-lg btn-outline-primary">editar</button>
+            <button type="button" (click)="eliminar(persona.id)" class="w-100 btn btn-lg btn-outline-primary">eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      
+    </div>
+  </footer>
+</div>
+
+
+
+
+    

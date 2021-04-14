@@ -1,0 +1,27 @@
+<form [formGroup]= "formulariopersona" >
+    <fieldset >
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Nombres</label>
+        <input  type="text" formControlName="nombres" [class.is-invalid]="formulariopersona.get('nombres')!.touched && formulariopersona.get('nombres')!.invalid" class="form-control" placeholder="Nombre">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Apellidos</label>
+        <input type="text" formControlName="apellidos"  [class.is-invalid]="formulariopersona.get('apellidos')!.touched && formulariopersona.get('apellidos')!.invalid" class="form-control" placeholder="Apellidos">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Cedula</label>
+        <input type="text" formControlName="cedula" [class.is-invalid]="formulariopersona.get('cedula')!.touched && formulariopersona.get('cedula')!.invalid"  class="form-control" placeholder="Cedula">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Correo</label>
+        <input type="text" formControlName="correo" [class.is-invalid]="formulariopersona.get('correo')!.touched && formulariopersona.get('correo')!.invalid"  class="form-control" placeholder="Correo">
+      </div>
+      <div class="mb-3">
+        <label for="disabledTextInput" class="form-label">Telefono</label>
+        <input type="number" formControlName="telefono"  [class.is-invalid]="formulariopersona.get('telefono')!.touched && formulariopersona.get('telefono')!.invalid" class="form-control" placeholder="Telefono">
+      </div>
+      <button type="submit" (click)="discriminar_flujo()"  class="btn btn-primary">{{nombre_boton}}</button>
+    </fieldset>
+
+    <!-- formControlName="firstName"  -->
+  </form>
